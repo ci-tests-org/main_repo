@@ -16,12 +16,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Label PR
-        uses: github/issue-labeler@v2.6
+        uses: github/issue-labeler@v3.3
         id: issue-labeler
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
           configuration-path: .github/actions/labeler.yml
           enable-versioned-regex: 0
+          sync-labels: 1
 
       - name: Create documentation issue
         if: ${{ steps.issue-labeler.outputs.labels-added }}
