@@ -25,7 +25,7 @@ jobs:
 
       - name: Create documentation issue
         # if: ${{ steps.issue-labeler.outputs.labels-added }}
-        uses: benc-uk/workflow-dispatch@v1.2.2
+        uses: benc-uk/workflow-dispatch@v1
         with:
           workflow: new-migrated-issue.yml
           repo: ci-tests-org/doc-issue-tracking
@@ -35,7 +35,7 @@ jobs:
 
       - name: Close documentation issue
         if: ${{ steps.issue-labeler.outputs.labels-removed }}
-        uses: benc-uk/workflow-dispatch@v1.2.2
+        uses: benc-uk/workflow-dispatch@v1
         with:
           workflow: delete-migrated-issue.yml
           repo: ci-tests-org/doc-issue-tracking
