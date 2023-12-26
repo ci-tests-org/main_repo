@@ -28,7 +28,7 @@ jobs:
         uses: benc-uk/workflow-dispatch@v1
         with:
           workflow: new-migrated-issue.yml
-          repo: ci-tests-org/doc-issue-tracking
+          repo: ci-tests-org/doc_issue_tracking
           ref: main
           token: ${{ secrets.DOCS_REPO_TOKEN }}
           inputs: '{ "pr-number": "${{ github.event.pull_request.number }}" }'
@@ -38,7 +38,7 @@ jobs:
         uses: benc-uk/workflow-dispatch@v1
         with:
           workflow: delete-migrated-issue.yml
-          repo: ci-tests-org/doc-issue-tracking
+          repo: ci-tests-org/doc_issue_tracking
           ref: main
           token: ${{ secrets.DOCS_REPO_TOKEN }}
           inputs: '{ "pr-number": "${{ github.event.pull_request.number }}" }'
