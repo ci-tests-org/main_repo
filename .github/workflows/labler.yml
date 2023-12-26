@@ -24,7 +24,7 @@ jobs:
           enable-versioned-regex: 0
 
       - name: Create documentation issue
-        # if: ${{ steps.issue-labeler.outputs.labels-added }}
+        if: ${{ steps.issue-labeler.outputs.labels-added }}
         uses: benc-uk/workflow-dispatch@v1
         with:
           workflow: new-migrated-issue.yml
