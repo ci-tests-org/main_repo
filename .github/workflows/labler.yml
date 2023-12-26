@@ -29,7 +29,7 @@ jobs:
         with:
           workflow: new-migrated-issue.yml
           repo: ci-tests-org/doc-issue-tracking
-          ref: master
+          ref: main
           token: ${{ secrets.DOCS_REPO_TOKEN }}
           inputs: '{ "pr-number": "${{ github.event.pull_request.number }}" }'
 
@@ -39,6 +39,6 @@ jobs:
         with:
           workflow: delete-migrated-issue.yml
           repo: ci-tests-org/doc-issue-tracking
-          ref: master
+          ref: main
           token: ${{ secrets.DOCS_REPO_TOKEN }}
           inputs: '{ "pr-number": "${{ github.event.pull_request.number }}" }'
