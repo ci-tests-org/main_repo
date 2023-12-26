@@ -30,7 +30,7 @@ jobs:
           workflow: new-migrated-issue.yml
           repo: ci-tests-org/doc-issue-tracking
           ref: master
-          #   token: ${{ secrets.DOCS_REPO_TOKEN }}
+          token: ${{ secrets.DOCS_REPO_TOKEN }}
           inputs: '{ "pr-number": "${{ github.event.pull_request.number }}" }'
 
       - name: Close documentation issue
@@ -40,5 +40,5 @@ jobs:
           workflow: delete-migrated-issue.yml
           repo: ci-tests-org/doc-issue-tracking
           ref: master
-          #   token: ${{ secrets.DOCS_REPO_TOKEN }}
+          token: ${{ secrets.DOCS_REPO_TOKEN }}
           inputs: '{ "pr-number": "${{ github.event.pull_request.number }}" }'
